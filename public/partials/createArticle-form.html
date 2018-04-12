@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/#/">RADDIT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div id="margin">
+<h1>Submit To RADDIT News</h1>
+<br>
+<i>You are submitting a link. The key to a successful submission is interesting content and a descriptive title.</i>
+<br><br>
+<form>
+    <div class="form-group">
+        <label>URL</label>		
+        <input class="form-control" ng-model="article.url"></input>
+    </div>
+    <div class="form-group">
+        <label>Title</label>
+        <textarea class="form-control" ng-model="article.title"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Username Display</label>
+        <textarea class="form-control" ng-model="article.user"></textarea>
+    </div>
+    
+    <input type="button" class="btn btn-primary" value="Add" ng-click="save()"></input>	
+</form>
+</div>

@@ -1,0 +1,25 @@
+#margin {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#bigLink {
+  color: #00B7FF;
+  font-size: 30px;
+}
+
+#voteSection {
+  font-size: 30px;
+}
+
+.navbar-brand {
+  font-size: 65px !important;
+}
+
+.col-md-4 {
+  font-size: 30px !important;
+}
+
+.pull-right {
+  float: right !important;
+}

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/#/">RADDIT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div id="margin">
+<h1>Edit News Title</h1>
+<br><br>
+<form>
+    <div class="form-group">
+        <label>URL</label>
+        <br>		
+        {{article.URL}}
+    </div>
+    <div class="form-group">
+        <label>Title</label>
+        <textarea class="form-control" ng-model="article.title"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Username Display</label>
+        <br>
+        {{article.user}}
+    </div>
+    
+    <input type="button" class="btn btn-primary" value="Update" ng-click="update()"></input>	
+</form>
+</div>

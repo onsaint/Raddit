@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/#/">RADDIT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div id="margin">
+	<h1>Delete Article</h1>
+	<h2>
+    	Are you sure you want to delete this article?
+	</h2>
+
+	<ul>
+    	<li>Title: {{article.title}}</li>
+    	<li>URL: {{article.URL}}</li>
+	</ul>
+
+	<br>
+
+	<input type="button" value="Yes, Delete" class="btn btn-danger" ng-click="delete()" />
+
+	<a class="btn btn-default" href="/#/">No, Go Back</a>
+</div>

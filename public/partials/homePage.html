@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#/">RADDIT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div id="margin">
+
+<div class="row">
+	<div class="col-md-5">
+  		<h1>News Aggregator Home Page</h1>
+	</div>
+  	<div class="col-md-4 offset-md-3">
+  		<center>
+  			<div class="pull-right">
+  				<a href="/#/add-article">
+					Submit an article
+				</a>
+			</div>
+  		</center>
+  	</div>
+</div>
+
+
+<div ng-repeat='article in articles'>
+	<hr>
+	
+	<div class="container-fluid">
+	<div class="row">
+  		<div id="voteSection" class="col-1">
+  			<center>
+  			{{article.votes}}
+  			</center>
+  			<button>
+  				<span class="glyphicon glyphicon-arrow-up"></span>
+  			</button>
+  			<button>
+  				<span class="glyphicon glyphicon-arrow-down"></span>
+  			</button>
+  		</div>
+  		
+  		<div class="col-11">
+  			<a href={{article.URL}} >
+  				<span id="bigLink">
+					{{article.title}}
+				</span>
+			</a> <br>
+			By {{article.user}} <br>
+			<b> Comments </b> &nbsp;&nbsp; 
+			<span id = "onlyForMod">
+				<a href="/#/article/edit/{{article._id}}">
+					Edit
+				</a>
+			</span>
+			&nbsp;&nbsp; 
+			<a href="/#/article/delete/{{article._id}}">
+				Delete
+			</a>
+  		</div>
+	</div>
+		
+	</div>
+</div>
+<hr>
+{{articles}}
+
+</div>
