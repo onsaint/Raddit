@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/#/">RADDIT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+   <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Name" ng-model="user.name" id="name" name="name">
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" placeholder="Username" ng-model="user.username" id="username" name="username">
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Email" ng-model="user.email" id="email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" placeholder="Password" ng-model="user.password" id="password" name="password">
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Password" ng-model="user.confirmPassword" id="confirmPassword" name="password2">
+  </div>
+  <div class="form-group">
+    <label>Moderator Code</label>
+    <input type="text" class="form-control" placeholder="Moderator Code (Only for moderators)" ng-model="user.modCode" id="modCode" name="modCode">
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="submit()">Register</button>
+  <br>
+<center>
+  Already a user? <a href="/#/login"> Login here </a>
+</center>

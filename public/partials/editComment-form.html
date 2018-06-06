@@ -6,29 +6,24 @@
 </nav>
 
 <div id="margin">
-<h1>Edit News Title</h1>
+<h1>Edit Comment</h1>
 <br><br>
 <form>
     <div class="form-group">
-        <label>URL</label>
+        <span ng-if="comment.comments[0].user == user.username">
+            <label> Your comment </label>
+        </span>
+        <span ng-if="user.isMod == 1">
+            <label> {{comment.comments[0].user}}'s comment </label>
+        </span>
+        <textarea class="form-control" ng-model="comment.comments[0].body"></textarea>
         <br>
-        <a href={{article.URL}}>		
-            {{article.URL}}
-        </a>
-    </div>
-    <div class="form-group">
-        <label>Title</label>
-        <textarea class="form-control" ng-model="article.title"></textarea>
-    </div>
-    <div class="form-group">
-        <label>Username Display</label>
+        <label> Article Title: </label> {{article.title}} 
         <br>
-        {{article.user}}
+        <label>URL: </label>	
+        <a href={{article.URL}}> {{article.URL}} </a>
     </div>
     
     <input type="button" class="btn btn-primary" value="Update" ng-click="update()"></input>	
 </form>
 </div>
-<!--
-{{article}}
--->

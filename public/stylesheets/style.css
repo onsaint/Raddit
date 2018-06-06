@@ -12,6 +12,10 @@
   font-size: 30px;
 }
 
+#voteCommentSection {
+  font-size: 20px;
+}
+
 .navbar-brand {
   font-size: 65px !important;
 }
@@ -22,4 +26,27 @@
 
 .pull-right {
   float: right !important;
+}
+
+.comments {
+	font-size: 30px;
+}
+
+.usernameComment {
+	font-size: 18px;
+	color: blue;
+}
+
+.userComment {
+	font-size: 25px;
+}
+
+.smallIcon {
+	font-size: 20px;
+}
+
+.bigAndBoldFont {
+  font-size: 35px;
+  color: red;
+  font-weight: bold;
 }

@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#/">RADDIT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div id="margin">
+
+<div class="container-fluid">
+  <div class="row">
+      <div id="voteSection" class="col-1">
+        <center>
+        <span id="voteCount"> {{article.votes}} </span>
+        </center>
+        <button ng-click="upArticle(article._id)">
+          <span class="glyphicon glyphicon-arrow-up"></span>
+        </button>
+        <button ng-click="downArticle(article._id)">
+          <span class="glyphicon glyphicon-arrow-down"></span>
+        </button>
+      </div>
+      
+      <div class="col-s11">
+        <a href={{article.URL}} >
+          <span id="bigLink">
+          {{article.title}}
+        </span>
+      </a> <br>
+      By {{article.user}} <br>
+      <span ng-if="article.user == user.username || user.isMod === 1">
+        <a href="/#/article/edit/{{article._id}}">
+          Edit
+        </a>
+      </span>
+      &nbsp;&nbsp;
+      <span ng-if="article.user == user.username || user.isMod === 1"> 
+      <a href="/#/article/delete/{{article._id}}">
+        Delete
+      </a>
+      </span>
+      </div>
+  </div>
+</div>
+<hr><hr>
+
+<div class="comments">
+  <b> Comments </b> 
+</div>
+<hr>
+<textarea rows="8" cols="60" ng-model="comment.content"> 
+</textarea>
+<br>
+<input type="button" class="btn btn-primary" value="submit" ng-click="save()"></input> 
+<div ng-repeat='comment in article.comments'>
+	<hr>
+	
+	<div class="container-fluid">
+	<div class="row">
+  		<div id="voteCommentSection" class="col-1">
+  			<center>
+  			<span id="voteCount"> {{comment.votes}} </span>
+  			</center>
+  			<button ng-click="up(article._id, comment.id)">
+  				<span class="glyphicon glyphicon-arrow-up smallIcon"></span>
+  			</button>
+  			<button ng-click="down(article._id, comment.id)">
+  				<span class="glyphicon glyphicon-arrow-down smallIcon"></span>
+  			</button>
+  		</div>
+  		
+  		<div class="col-s11">
+  			<span class="usernameComment">
+					{{comment.user}}
+				</span> at {{comment.date}}
+			</a> <br>
+      <span class="userComment">
+			 {{comment.body}} <br>
+      </span>
+<!--  <a href="/#/article/viewcomments/{{article._id}}/{{comment.id}}">
+			 Reply/article/viewcomments/:articleid/edit/:commentid
+      </a>
+      &nbsp;&nbsp; -->
+      <span ng-if="comment.user == user.username || user.isMod == 1">
+        <a href="/#/article/viewcomments/{{article._id}}/edit/{{comment.id}}">
+          Edit
+        </a>
+      </span>
+      &nbsp;&nbsp; 
+        <span ng-if="comment.user == user.username || user.isMod == 1">
+          <a href="/#/article/viewcomments/{{article._id}}/delete/{{comment.id}}">
+            Delete
+          </a>
+        </span>
+  		</div>
+	</div>
+		
+	</div>
+</div>
+<hr>
+</div>
+<!--
+{{article}}
+-->

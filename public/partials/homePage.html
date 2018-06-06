@@ -5,11 +5,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      <input class="form-control" ng-model="article.search" placeholder="Search"></input>
+      <input type="button" class="btn btn-primary" value="Search" ng-click="submit()">
+
   </div>
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <button type="button" class="btn btn-secondary btn-lg" ng-click="logout()"> Logout </button>
+      </li>
+    </ul>
+
 </nav>
 
 <div id="margin">
@@ -37,12 +42,12 @@
 	<div class="row">
   		<div id="voteSection" class="col-1">
   			<center>
-  			{{article.votes}}
+  			<span id="voteCount"> {{article.votes}} </span>
   			</center>
-  			<button>
+  			<button ng-click="up(article._id)">
   				<span class="glyphicon glyphicon-arrow-up"></span>
   			</button>
-  			<button>
+  			<button ng-click="down(article._id)">
   				<span class="glyphicon glyphicon-arrow-down"></span>
   			</button>
   		</div>
@@ -54,22 +59,39 @@
 				</span>
 			</a> <br>
 			By {{article.user}} <br>
-			<b> Comments </b> &nbsp;&nbsp; 
-			<span id = "onlyForMod">
+			<a href="/#/article/viewcomments/{{article._id}}">
+        <b> Comments 
+          <span ng-repeat='comment in article.comments | filter:query as filtered'>
+            
+          </span>
+          <span ng-if="filtered.length">
+            ({{filtered.length}})
+          </span>
+          <span ng-if="!filtered.length">
+            (0)
+          </span>
+          
+        </b>
+      </a>
+      &nbsp;&nbsp; 
+			<span ng-if="article.user == user.username || user.isMod == 1">
 				<a href="/#/article/edit/{{article._id}}">
 					Edit
 				</a>
 			</span>
-			&nbsp;&nbsp; 
+			&nbsp;&nbsp;
+      <span ng-if="article.user == user.username || user.isMod == 1"> 
 			<a href="/#/article/delete/{{article._id}}">
 				Delete
 			</a>
-  		</div>
+  		</span>
+    </div>
 	</div>
 		
 	</div>
 </div>
 <hr>
-{{articles}}
-
 </div>
+<!-- 
+{{articles}}
+-->
