@@ -15,3 +15,5 @@ Designed and built an online news aggregation application like Digg or Reddit us
 * Express
 * AngularJS
 * NodeJS
+
+All work is original and I will not be responsible if the contents are copied.
